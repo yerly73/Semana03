@@ -1,0 +1,51 @@
+﻿<Window x:Class="Semana03.Conexion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Semana03"
+        mc:Ignorable="d"
+        Title="Conexion" Height="450" Width="800">
+    <Grid>
+
+        <Grid>
+            <!-- Fila superior para el buscador -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Buscador -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Input -->
+                <TextBox x:Name="searchTextBox" Grid.Column="0" Margin="5"/>
+
+                <!-- Botón -->
+                <Button Content="Buscar" Grid.Column="1" Margin="5" Click="SearchButton_Click"/>
+            </Grid>
+
+            <!-- Contenido principal con la tabla y los botones -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Botones -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="btnButton1_Click" Margin="5" Click="DataReader_Click"/>
+                    <Button Content="btnButton2_Click" Margin="5" Click="DataTable_Click"/>
+                </StackPanel>
+
+                <!-- Tabla (DataGrid) -->
+                <DataGrid Grid.Row="1" AutoGenerateColumns="True" Margin="20" x:Name="studentData">
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
